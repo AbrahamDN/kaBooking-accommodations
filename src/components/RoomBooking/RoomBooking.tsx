@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const RoomBooking = () => {
   const [numNights, setNumNights] = useState(5);
-  const [roomType, setRoomType] = useState("");
+  // const [roomType, setRoomType] = useState("");
 
   // Implement booking logic here
 
