@@ -14,10 +14,10 @@ const HotelPage = () => {
   }
 
   return (
-    <div>
+    <main className="container">
       <HotelDetail hotel={hotel} />
       <RoomBooking />
-    </div>
+    </main>
   );
 };
 
