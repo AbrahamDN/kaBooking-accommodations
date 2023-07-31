@@ -1,5 +1,5 @@
-import HotelCard from "../components/HotelCard";
-import { accommodations } from "../data/accommodation.json";
+import HotelCard from "../../components/hotelCard/HotelCard";
+import { accommodations } from "../../data/accommodation.json";
 
 const HomePage = () => {
   return (

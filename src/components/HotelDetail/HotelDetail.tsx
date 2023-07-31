@@ -1,4 +1,3 @@
-import React from "react";
 import { HotelDetailProps } from "./HotelDetail.types";
 
 const HotelDetail = ({ hotel }: HotelDetailProps) => {

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
-import HotelDetail from "../components/HotelDetail";
-import RoomBooking from "../components/RoomBooking";
-import { accommodations } from "../data/accommodation.json";
+import HotelDetail from "../../components/hotelDetail/HotelDetail";
+import RoomBooking from "../../components/roomBooking/RoomBooking";
+import { accommodations } from "../../data/accommodation.json";
 
 const HotelPage = () => {
   const location = useLocation();

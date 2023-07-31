@@ -1,10 +1,9 @@
-import React from "react";
 import { HotelCardProps } from "./HotelCard.types";
 
 const HotelCard = ({ hotel }: HotelCardProps) => {
   return (
     <div className="hotel-card">
-      <h2>{hotel.name}</h2>
+      <h3 className="h5">{hotel.name}</h3>
       <p>{hotel.description}</p>
       {/* Add other hotel information here */}
     </div>
