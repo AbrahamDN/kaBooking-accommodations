@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
-import HotelDetail from "./HotelDetail";
+import HotelDetail from "./RoomDetail";
 import { accommodations } from "../../data/accommodation.json";
 
 const hotel = accommodations[0];

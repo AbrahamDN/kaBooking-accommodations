@@ -1,0 +1,20 @@
+.room-details {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+.room-details > .divider {
+  margin: 0 0.8rem;
+}
+
+.room-details > .item {
+  display: flex;
+  align-items: center;
+}
+.room-details > .item svg {
+  opacity: 0.4;
+  fill: inherit;
+  stroke: var(--color-bg);
+}
