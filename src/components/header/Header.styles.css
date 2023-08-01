@@ -17,6 +17,7 @@
 }
 
 .header-search {
+  width: 100%;
 }
 
 .header-account {
@@ -27,5 +28,9 @@
   .header-logo,
   .header-account {
     display: block;
+  }
+
+  .header-search {
+    width: auto;
   }
 }
