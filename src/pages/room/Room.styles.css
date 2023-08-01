@@ -1,0 +1,11 @@
+.page > *,
+.page > .content > * {
+  margin-bottom: 4.8rem;
+}
+
+.page .subtitle {
+  margin-bottom: 2rem;
+}
+
+.desc__wrapper {
+}
