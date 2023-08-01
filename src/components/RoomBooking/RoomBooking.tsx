@@ -8,7 +8,7 @@ const RoomBooking = () => {
   // Implement booking logic here
 
   return (
-    <div className="room-booking">
+    <article className="room-booking">
       <h3>Room Booking</h3>
       <label>
         Number of Nights:
@@ -19,7 +19,7 @@ const RoomBooking = () => {
         />
       </label>
       {/* Add room type selection and booking confirmation here */}
-    </div>
+    </article>
   );
 };
 

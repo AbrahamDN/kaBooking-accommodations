@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import HotelDetail from "../../components/hotelDetail/HotelDetail";
+import RoomDetail from "../../components/roomDetail/RoomDetail";
 import RoomBooking from "../../components/roomBooking/RoomBooking";
 import { accommodations } from "../../data/accommodation.json";
 import Layout from "../../layout/Layout";
@@ -33,7 +33,7 @@ const RoomPage = () => {
   return (
     <Layout>
       <main className="page container">
-        <HotelDetail hotel={hotel} />
+        <RoomDetail hotel={hotel} />
 
         <div className="content">
           <section className="desc__wrapper">
