@@ -3,18 +3,18 @@ import { render, screen } from "@testing-library/react";
 import HotelDetail from "./RoomDetail";
 import { accommodations } from "../../data/accommodation.json";
 
-const hotel = accommodations[0];
+const room = accommodations[0];
 
 describe("HotelDetail test", () => {
   beforeEach(() => {
-    render(<HotelDetail hotel={hotel} />);
+    render(<HotelDetail room={room} />);
   });
 
   test("should show title all the time", () => {
-    expect(screen.getByText(hotel.name)).toBeDefined();
+    expect(screen.getByText(room.name)).toBeDefined();
   });
 
   test("should show description all the time", () => {
-    expect(screen.getByText(hotel.description)).toBeDefined();
+    expect(screen.getByText(room.description)).toBeDefined();
   });
 });

@@ -1,11 +1,11 @@
-import { HotelCardProps } from "./HotelCard.types";
+import { HotelCardProps } from "./HotelCard.types.ts";
 
-const HotelCard = ({ hotel }: HotelCardProps) => {
+const HotelCard = ({ room }: HotelCardProps) => {
   return (
-    <div className="hotel-card">
-      <h3 className="h5">{hotel.name}</h3>
-      <p>{hotel.description}</p>
-      {/* Add other hotel information here */}
+    <div className="room-card">
+      <h3 className="h5">{room.name}</h3>
+      <p>{room.description}</p>
+      {/* Add other room information here */}
     </div>
   );
 };

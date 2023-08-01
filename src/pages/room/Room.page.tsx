@@ -8,11 +8,11 @@ import "./Room.styles.css";
 
 const RoomPage = () => {
   const location = useLocation();
-  // Get the hotel id from the URL
+  // Get the room id from the URL
   const hotelId = parseInt(location.pathname.split("/").pop()!);
-  const hotel = accommodations.find((hotel) => hotel.id === hotelId);
+  const room = accommodations.find((room) => room.id === hotelId);
 
-  if (!hotel) {
+  if (!room) {
     return (
       <Layout>
         <main className="page container">
@@ -33,12 +33,12 @@ const RoomPage = () => {
   return (
     <Layout>
       <main className="page container">
-        <RoomDetail hotel={hotel} />
+        <RoomDetail room={room} />
 
         <div className="content">
           <section className="desc__wrapper">
             <h3 className="h5 subtitle">About this place</h3>
-            <Markup className="desc" markup={hotel.description} />
+            <Markup className="desc" markup={room.description} />
           </section>
         </div>
 

@@ -1,5 +1,5 @@
 // RoomBooking.js
-import React, { useState } from "react";
+import { useState } from "react";
 
 const RoomBooking = () => {
   const [numNights, setNumNights] = useState(5);

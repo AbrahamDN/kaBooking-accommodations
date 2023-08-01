@@ -9,9 +9,9 @@ const HomePage = () => {
       <main className="container">
         <h1>Hotel Booking Website</h1>
 
-        {accommodations.map((hotel) => (
-          <Link key={hotel.id} to={`/room/${hotel.id}`}>
-            <HotelCard hotel={hotel} />
+        {accommodations.map((room) => (
+          <Link key={room.id} to={`/room/${room.id}`}>
+            <HotelCard room={room} />
           </Link>
         ))}
       </main>

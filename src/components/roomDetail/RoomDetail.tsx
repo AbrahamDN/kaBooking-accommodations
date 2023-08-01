@@ -2,12 +2,12 @@ import { RoomDetailProps } from "./RoomDetail.types.ts";
 import "./RoomDetail.styles.css";
 import { Star, Hotel, MapPin } from "lucide-react";
 
-const RoomDetail = ({ hotel }: RoomDetailProps) => {
+const RoomDetail = ({ room }: RoomDetailProps) => {
   const locations = [
-    hotel.address_1,
-    hotel.address_2,
-    hotel.address_3,
-    hotel.postcode,
+    room.address_1,
+    room.address_2,
+    room.address_3,
+    room.postcode,
   ].filter(Boolean);
   const location = locations.toString().replace(/,(?=[^\s])/g, ", ");
 
@@ -15,18 +15,18 @@ const RoomDetail = ({ hotel }: RoomDetailProps) => {
 
   return (
     <div className="room">
-      <h2 className="h4 room-name">{hotel.name}</h2>
+      <h2 className="h4 room-name">{room.name}</h2>
 
       <div className="room-details">
         <div className="rating item">
           <Star />
           <span>
-            {parseFloat(hotel.rating.label)} <span>stars</span>
+            {parseFloat(room.rating.label)} <span>stars</span>
           </span>
         </div>
         <Divider />
         <div className="type item">
-          <Hotel /> <span>{hotel.type.name}</span>
+          <Hotel /> <span>{room.type.name}</span>
         </div>
         <Divider />
         <div className="location item">
