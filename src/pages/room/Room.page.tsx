@@ -1,10 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import RoomDetail from "../../components/roomDetail/RoomDetail";
 import RoomBooking from "../../components/roomBooking/RoomBooking";
 import { accommodations } from "../../data/accommodation.json";
 import Layout from "../../layout/Layout";
 import Markup from "../../components/Markup/Markup";
 import "./Room.styles.css";
+import RoomNotFoundPage from "./RoomNotFound.page";
 
 const RoomPage = () => {
   const location = useLocation();
@@ -12,23 +13,7 @@ const RoomPage = () => {
   const roomId = parseInt(location.pathname.split("/").pop()!);
   const room = accommodations.find((room) => room.id === roomId);
 
-  if (!room) {
-    return (
-      <Layout>
-        <main className="page container">
-          <div className="not-found">
-            <h1 className="h2">
-              404: <br />
-              Room not found.
-            </h1>
-            <Link className="link" to="/">
-              Return to homepage
-            </Link>
-          </div>
-        </main>
-      </Layout>
-    );
-  }
+  if (!room) return <RoomNotFoundPage />;
 
   return (
     <Layout>
