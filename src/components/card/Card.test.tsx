@@ -1,13 +1,13 @@
 import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { accommodations } from "../../data/accommodation.json";
-import HotelCard from "./HotelCard";
+import Card from "./Card";
 
 const room = accommodations[0];
 
-describe("HotelCard test", () => {
+describe("Card test", () => {
   beforeEach(() => {
-    render(<HotelCard room={room} />);
+    render(<Card room={room} />);
   });
 
   test("should show title all the time", () => {

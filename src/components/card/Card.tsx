@@ -1,6 +1,6 @@
-import { HotelCardProps } from "./HotelCard.types.ts";
+import { CardProps } from "./Card.types.ts";
 
-const HotelCard = ({ room }: HotelCardProps) => {
+const Card = ({ room }: CardProps) => {
   return (
     <div className="room-card">
       <h3 className="h5">{room.name}</h3>
@@ -10,4 +10,4 @@ const HotelCard = ({ room }: HotelCardProps) => {
   );
 };
 
-export default HotelCard;
+export default Card;

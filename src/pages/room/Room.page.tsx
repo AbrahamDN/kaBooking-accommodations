@@ -9,8 +9,8 @@ import "./Room.styles.css";
 const RoomPage = () => {
   const location = useLocation();
   // Get the room id from the URL
-  const hotelId = parseInt(location.pathname.split("/").pop()!);
-  const room = accommodations.find((room) => room.id === hotelId);
+  const roomId = parseInt(location.pathname.split("/").pop()!);
+  const room = accommodations.find((room) => room.id === roomId);
 
   if (!room) {
     return (
