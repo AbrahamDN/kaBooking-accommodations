@@ -1,4 +1,4 @@
-import { Room } from "../../types/accommodation.types";
+import { Room } from "../../types/accommodation.types.ts";
 
 export type RoomBookingProps = {
   className?: string;

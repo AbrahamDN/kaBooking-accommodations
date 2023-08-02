@@ -2,7 +2,7 @@ import { expect } from "vitest";
 
 import RoomBooking from "./RoomBooking";
 import { render } from "@testing-library/react";
-import { Room } from "../../types/accommodation.types";
+import { Room } from "../../types/accommodation.types.ts";
 
 const mockBed = {
   price: {

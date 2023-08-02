@@ -1,4 +1,4 @@
-import { SliderArrowProps } from "./Slider.types";
+import { SliderArrowProps } from "./Slider.types.ts";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { default as cn } from "classnames";
 

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Room } from "../types/accommodation.types";
+import { Room } from "../types/accommodation.types.ts";
 
 interface RoomState {
   bed: Room | undefined;

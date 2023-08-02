@@ -1,7 +1,7 @@
 // RoomBooking.js
 import "./RoomBooking.styles.css";
 import { default as cn } from "classnames";
-import { RoomBookingProps } from "./RoomBooking.types";
+import { RoomBookingProps } from "./RoomBooking.types.ts";
 import { useRoomStore } from "../../store/room.store";
 import { formatCurrencyString } from "../../lib/formatCurrencyString";
 

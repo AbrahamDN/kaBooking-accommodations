@@ -1,5 +1,5 @@
 import "./RoomBox.styles.css";
-import { RoomBoxProps } from "./RoomBox.types";
+import { RoomBoxProps } from "./RoomBox.types.ts";
 import { default as cn } from "classnames";
 import { rooms as rooms_available } from "../../data/accommodation_availability.json";
 import RoomBoxIcon from "./RoomBoxIcon";

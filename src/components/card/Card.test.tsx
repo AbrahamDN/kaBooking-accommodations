@@ -1,7 +1,7 @@
 import { describe, expect } from "vitest";
 import { render } from "@testing-library/react";
 import Card from "./Card";
-import { Accommodation } from "../../types/accommodation.types";
+import { Accommodation } from "../../types/accommodation.types.ts";
 
 const mockRoom = {
   name: "Sample Room",

@@ -1,4 +1,4 @@
-import { RoomBoxIconProps } from "./RoomBox.types";
+import { RoomBoxIconProps } from "./RoomBox.types.ts";
 import { BedDouble, BedSingle, Bed } from "lucide-react";
 
 const RoomBoxIcon = ({ max, available }: RoomBoxIconProps) => {

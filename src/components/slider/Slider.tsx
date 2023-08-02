@@ -2,7 +2,7 @@ import "./Slider.styles.css";
 import { default as cn } from "classnames";
 import { useRef, useState } from "react";
 import SliderArrow from "./SliderArrow";
-import { SliderProps } from "./Slider.types";
+import { SliderProps } from "./Slider.types.ts";
 import useScroll from "../../hooks/useScroll";
 
 const Slider = ({ children, className }: SliderProps) => {
