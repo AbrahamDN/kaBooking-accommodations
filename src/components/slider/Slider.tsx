@@ -1,23 +1,17 @@
 import "./Slider.styles.css";
 import { default as cn } from "classnames";
-import { useScroll } from "@react-hooks-library/core";
 import { useRef, useState } from "react";
 import SliderArrow from "./SliderArrow";
 import { SliderProps } from "./Slider.types";
+import useScroll from "../../hooks/useScroll";
 
 const Slider = ({ children, className }: SliderProps) => {
-  const sliderRef = useRef<HTMLDivElement | null>(null);
-  const [scroll, setScroll] = useState({ x: 0, y: 0 });
   const [scrollCount] = useState(0);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const scroll = useScroll(sliderRef);
 
-  const showPrevBtn = scroll.x > 0.06;
-  const showNextBtn = scroll.x !== 1;
-
-  useScroll(
-    sliderRef,
-    ({ scrollX, scrollY }: { scrollX: number; scrollY: number }) =>
-      setScroll({ x: scrollX, y: scrollY })
-  );
+  const showPrevBtn = scroll.x > 16;
+  // const showNextBtn = scroll.x !== 1;
 
   const handleScroll = () => {
     sliderRef.current?.children[scrollCount].scrollTo({
@@ -41,7 +35,7 @@ const Slider = ({ children, className }: SliderProps) => {
         {children}
       </div>
 
-      {showNextBtn && <SliderArrow onClick={nextScroll} />}
+      <SliderArrow onClick={nextScroll} />
     </div>
   );
 };
@@ -49,4 +43,4 @@ export default Slider;
 
 // TODO: Add error handling / check that children have 'slide' class
 // TODO: Implement working arrow scrolling
-// TODO: Fix useScroll type issue / Use a different package
+// TODO: Programmatically show Right SliderArrow
