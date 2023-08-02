@@ -47,6 +47,7 @@ body {
 
 p {
   line-height: 2.4rem;
+  max-width: 755ch;
 }
 p:not(:last-child) {
   margin-bottom: 1em;
@@ -59,6 +60,7 @@ p:not(:last-child) {
 .h5,
 .h6 {
   font-weight: bold;
+  color: var(--color-heading);
 }
 
 .h1 {

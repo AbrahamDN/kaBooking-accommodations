@@ -4,7 +4,7 @@ interface Props extends React.HTMLAttributes<HTMLParagraphElement> {
 
 const Markup = ({ markup, className, ...props }: Props) => {
   return (
-    <p
+    <div
       dangerouslySetInnerHTML={{ __html: markup }}
       className={`markup ${className || ""}`}
       {...props}

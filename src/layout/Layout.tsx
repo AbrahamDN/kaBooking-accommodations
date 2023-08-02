@@ -11,7 +11,17 @@ const Layout = ({ children }: Props) => {
 
       <>{children}</>
 
-      <footer className="container">Footer</footer>
+      <footer className="container" style={{ textAlign: "center" }}>
+        Made with thought! -{" "}
+        <a
+          className="link"
+          href="https://github.com/AbrahamDN"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AbrahamDN
+        </a>
+      </footer>
     </>
   );
 };

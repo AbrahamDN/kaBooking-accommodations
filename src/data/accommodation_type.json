@@ -1,0 +1,7 @@
+{
+  "types": [
+    { "id": 1, "name": "Hotel" },
+    { "id": 9, "name": "Guest House" },
+    { "id": 2, "name": "Apartment" }
+  ]
+}

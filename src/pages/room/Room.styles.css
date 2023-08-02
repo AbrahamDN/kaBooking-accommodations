@@ -1,11 +1,39 @@
 .page > *,
-.page > .content > * {
+.page > .content__container > .content > * {
   margin-bottom: 4.8rem;
 }
 
-.page .subtitle {
+.page .subtitle,
+.beds__title,
+.facilities__title {
   margin-bottom: 2rem;
 }
 
-.desc__wrapper {
+.facilities__list-item {
+  margin-bottom: 0.8rem;
+}
+
+@media (min-width: 481px) {
+  .facilities__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 961px) {
+  .page > .content__container {
+    display: flex;
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .content {
+    width: 60%;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    margin-left: 8rem;
+  }
 }
