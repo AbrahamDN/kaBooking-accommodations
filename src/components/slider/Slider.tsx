@@ -36,11 +36,12 @@ const Slider = ({ children, className }: SliderProps) => {
   return (
     <div className={cn("slider", className)}>
       {showPrevBtn && <SliderArrow left onClick={prevScroll} />}
-      {showNextBtn && <SliderArrow onClick={nextScroll} />}
 
       <div ref={sliderRef} className="slides scrollbar-hidden">
         {children}
       </div>
+
+      {showNextBtn && <SliderArrow onClick={nextScroll} />}
     </div>
   );
 };

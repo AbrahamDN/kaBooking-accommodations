@@ -21,6 +21,9 @@
   --text-body: 14px;
   --text-subtitle: 12px;
   --text-caption: 11px;
+
+  /* BOX SHADOW */
+  --box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 }
 
 * {
@@ -51,6 +54,10 @@ p {
 }
 p:not(:last-child) {
   margin-bottom: 1em;
+}
+
+ul {
+  list-style: inside;
 }
 
 .h1,

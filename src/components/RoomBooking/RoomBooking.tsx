@@ -1,24 +1,26 @@
 // RoomBooking.js
-import { useState } from "react";
+import "./RoomBooking.styles.css";
+import { default as cn } from "classnames";
+import { RoomBookingProps } from "./RoomBooking.types";
+import { useRoomStore } from "../../store/room.store";
+import { formatCurrencyString } from "../../lib/formatCurrencyString";
 
-const RoomBooking = () => {
-  const [numNights, setNumNights] = useState(5);
-  // const [roomType, setRoomType] = useState("");
-
-  // Implement booking logic here
+const RoomBooking = ({ className }: RoomBookingProps) => {
+  const { bed } = useRoomStore();
 
   return (
-    <article className="room-booking">
-      <h3>Room Booking</h3>
-      <label>
-        Number of Nights:
-        <input
-          type="number"
-          value={numNights}
-          onChange={(e) => setNumNights(parseInt(e.target.value))}
-        />
-      </label>
-      {/* Add room type selection and booking confirmation here */}
+    <article className={cn("room-booking", className)}>
+      <div className="">
+        <span className="h6">
+          {bed?.price
+            ? formatCurrencyString({
+                val: bed?.price?.value,
+                currency: bed.price.currency_iso_code,
+              })
+            : "Unavailable"}
+        </span>
+        <span className="caption"> /night</span>
+      </div>
     </article>
   );
 };

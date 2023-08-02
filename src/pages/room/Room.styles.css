@@ -20,6 +20,12 @@
   }
 }
 
+.sidebar {
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  order: 1;
+}
+
 @media (min-width: 961px) {
   .page > .content__container {
     display: flex;
@@ -32,8 +38,10 @@
 
   .sidebar {
     position: sticky;
-    top: 0;
+    top: 4rem;
     height: fit-content;
     margin-left: 8rem;
+    width: 100%;
+    box-shadow: var(--box-shadow);
   }
 }

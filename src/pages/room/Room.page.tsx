@@ -1,6 +1,7 @@
 import "./Room.styles.css";
 
-import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
 import { accommodations } from "../../data/accommodation.json";
 
 import RoomDetail from "../../components/roomDetail/RoomDetail";
@@ -10,12 +11,25 @@ import Markup from "../../components/Markup/Markup";
 import RoomNotFoundPage from "./RoomNotFound.page";
 import RoomBox from "../../components/roomBox/RoomBox";
 import Slider from "../../components/slider/Slider";
+import { useRoomStore } from "../../store/room.store";
+import { Room } from "../../types/accommodation.types";
 
 const RoomPage = () => {
-  const location = useLocation();
-  // Get the room id from the URL
-  const roomId = parseInt(location.pathname.split("/").pop()!);
+  const { bed, setBed } = useRoomStore();
+  const setSearchParams = useSearchParams({})[1];
+  const params = useParams();
+  const roomId = parseInt(params.id!);
   const room = accommodations.find((room) => room.id === roomId);
+
+  const selectBed = (newBed: Room) => {
+    setBed(newBed);
+    setSearchParams({ bed: `${bed?.id}` });
+  };
+
+  useEffect(() => {
+    if (room) setBed(room.rooms[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!room) return <RoomNotFoundPage />;
   return (
@@ -33,7 +47,12 @@ const RoomPage = () => {
 
                 <Slider>
                   {room.rooms.map((item) => (
-                    <RoomBox key={item.id} className="slide" room={item} />
+                    <RoomBox
+                      key={item.id}
+                      className="slide"
+                      room={item}
+                      onClick={() => selectBed(item)}
+                    />
                   ))}
                 </Slider>
               </section>

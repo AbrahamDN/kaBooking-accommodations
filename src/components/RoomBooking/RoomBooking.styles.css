@@ -1,0 +1,14 @@
+.room-booking {
+  padding: 2rem;
+  width: 100%;
+}
+
+.room-booking .caption {
+  font-weight: 600;
+}
+
+@media (min-width: 961px) {
+  .room-booking {
+    padding: 4rem;
+  }
+}

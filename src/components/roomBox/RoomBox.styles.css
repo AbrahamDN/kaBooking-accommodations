@@ -3,9 +3,17 @@
   border-radius: var(--border-radius);
   padding: 2.4rem;
   width: fit-content;
+  cursor: pointer;
 }
 .room-box.flex {
   width: 100%;
+}
+.room-box.selected {
+  border-color: var(--color-heading);
+  border-width: 2px;
+}
+.room-box:not(.selected):focus-visible {
+  outline-color: var(--color-body);
 }
 
 .room-box > * {
