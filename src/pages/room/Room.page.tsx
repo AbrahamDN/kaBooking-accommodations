@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { accommodations } from "../../data/accommodation.json";
 import { useRoomStore } from "../../store/room.store";
-import { Room } from "../../types/accommodation.types.ts";
+import { Room } from "../../types/accommodation.types";
 
 import RoomDetail from "../../components/roomDetail/RoomDetail";
 import Layout from "../../layout/Layout";
@@ -12,7 +12,7 @@ import Markup from "../../components/Markup/Markup";
 import RoomNotFoundPage from "./RoomNotFound.page";
 import RoomBox from "../../components/roomBox/RoomBox";
 import Slider from "../../components/slider/Slider";
-import RoomBooking from "../../components/roomBooking/RoomBooking.tsx";
+import RoomBooking from "../../components/roomBooking/RoomBooking";
 
 const RoomPage = () => {
   const { setBed } = useRoomStore();
