@@ -15,19 +15,24 @@ import { useRoomStore } from "../../store/room.store";
 import { Room } from "../../types/accommodation.types";
 
 const RoomPage = () => {
-  const { bed, setBed } = useRoomStore();
-  const setSearchParams = useSearchParams({})[1];
+  const { setBed } = useRoomStore();
+  const [searchParams, setSearchParams] = useSearchParams({});
   const params = useParams();
   const roomId = parseInt(params.id!);
   const room = accommodations.find((room) => room.id === roomId);
 
   const selectBed = (newBed: Room) => {
+    if (!newBed) return;
     setBed(newBed);
-    setSearchParams({ bed: `${bed?.id}` });
+    setSearchParams({ bed: `${newBed.id}` });
   };
 
   useEffect(() => {
-    if (room) setBed(room.rooms[0]);
+    if (room && searchParams) {
+      const bedId = parseInt(searchParams.get("bed")!) || 0;
+      const selectedBed = room.rooms[bedId];
+      if (selectedBed) setBed(selectedBed);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

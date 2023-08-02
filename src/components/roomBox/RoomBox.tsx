@@ -3,12 +3,13 @@ import { RoomBoxProps } from "./RoomBox.types";
 import { default as cn } from "classnames";
 import { rooms as rooms_available } from "../../data/accommodation_availability.json";
 import RoomBoxIcon from "./RoomBoxIcon";
-import { useRoomStore } from "../../store/room.store";
+import { useSearchParams } from "react-router-dom";
 
 const RoomBox = ({ className, flex, onClick, room }: RoomBoxProps) => {
-  const { bed } = useRoomStore();
+  const [searchParams] = useSearchParams();
   const roomAvailability = rooms_available.find((item) => item.id === room.id);
-  const selected = bed?.id === room.id;
+  const bedParam = searchParams.get("bed")!;
+  const selected = parseInt(bedParam) === room.id;
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
     const enterOrSpace =
