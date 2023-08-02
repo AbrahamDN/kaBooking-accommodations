@@ -50,7 +50,7 @@ body {
 
 p {
   line-height: 2.4rem;
-  max-width: 755ch;
+  max-width: 75ch;
 }
 p:not(:last-child) {
   margin-bottom: 1em;

@@ -1,0 +1,20 @@
+.accoms {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.page-header > .standfirst {
+  margin-top: 1.6rem;
+}
+
+@media (min-width: 481px) {
+  .accoms {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 961px) {
+  .accoms {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
