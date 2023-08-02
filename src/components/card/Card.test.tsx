@@ -1,20 +1,41 @@
-import { describe, expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { accommodations } from "../../data/accommodation.json";
+import { describe, expect } from "vitest";
+import { render } from "@testing-library/react";
 import Card from "./Card";
+import { Accommodation } from "../../types/accommodation.types";
 
-const room = accommodations[0];
+const mockRoom = {
+  name: "Sample Room",
+  description: "Sample description",
+  images: [{ filename: "sample.jpg", alt: "Sample Image" }],
+  type: { name: "Sample Type" },
+  facilities: [
+    { id: 1, label: "Facility 1" },
+    { id: 2, label: "Facility 2" },
+    { id: 3, label: "Facility 3" },
+  ],
+} as Accommodation;
 
-describe("Card test", () => {
-  beforeEach(() => {
-    render(<Card room={room} />);
+describe("Card Component", () => {
+  it("renders correctly with provided props", () => {
+    const { getByText, getByAltText, getAllByRole } = render(
+      <Card room={mockRoom} />
+    );
+
+    // Check if the elements with specific text content are present
+    expect(getByText("Sample Room")).toBeDefined();
+    expect(getByText("Sample description")).toBeDefined();
+    expect(getByText("Sample Type")).toBeDefined();
+    expect(getByText("Facility 1")).toBeDefined();
+    expect(getByText("Facility 2")).toBeDefined();
+    expect(getByText("Facility 3")).toBeDefined();
+
+    // Check if the image with specific alt text is present
+    expect(getByAltText("Sample Image")).toBeDefined();
+
+    // Check if there are exactly 3 list items for facilities
+    const facilityItems = getAllByRole("listitem");
+    expect(facilityItems).toHaveLength(3);
   });
 
-  test("should show title all the time", () => {
-    expect(screen.getByText(room.name)).toBeDefined();
-  });
-
-  test("should show description all the time", () => {
-    expect(screen.getByText(room.description)).toBeDefined();
-  });
+  // Add more test cases if needed to cover different scenarios
 });

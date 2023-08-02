@@ -5,17 +5,18 @@ import { RoomBookingProps } from "./RoomBooking.types";
 import { useRoomStore } from "../../store/room.store";
 import { formatCurrencyString } from "../../lib/formatCurrencyString";
 
-const RoomBooking = ({ className }: RoomBookingProps) => {
+const RoomBooking = ({ className, mockBed }: RoomBookingProps) => {
   const { bed } = useRoomStore();
+  const room = mockBed || bed;
 
   return (
     <article className={cn("room-booking", className)}>
       <div className="">
         <span className="h6">
-          {bed?.price
+          {room?.price
             ? formatCurrencyString({
-                val: bed?.price?.value,
-                currency: bed.price.currency_iso_code,
+                val: 100,
+                currency: room.price.currency_iso_code,
               })
             : "Unavailable"}
         </span>
