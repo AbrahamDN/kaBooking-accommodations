@@ -12,7 +12,7 @@ import Markup from "../../components/Markup/Markup";
 import RoomNotFoundPage from "./RoomNotFound.page";
 import RoomBox from "../../components/roomBox/RoomBox";
 import Slider from "../../components/slider/Slider";
-import RoomBooking from "../../components/roomBooking/RoomBooking";
+import RoomBooking from "../../components/roomBooking/RoomBooking.tsx";
 
 const RoomPage = () => {
   const { setBed } = useRoomStore();
