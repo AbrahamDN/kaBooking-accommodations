@@ -12,6 +12,7 @@ import Markup from "../../components/Markup/Markup";
 import RoomNotFoundPage from "./RoomNotFound.page";
 import RoomBox from "../../components/roomBox/RoomBox";
 import Slider from "../../components/slider/Slider";
+import RoomBook from "./RoomBook";
 
 const RoomPage = () => {
   const { setBed } = useRoomStore();
@@ -80,7 +81,9 @@ const RoomPage = () => {
             </section>
           </div>
 
-          <aside className="sidebar"></aside>
+          <aside className="sidebar">
+            <RoomBook />
+          </aside>
         </div>
       </main>
     </Layout>
