@@ -12,9 +12,13 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 961px) {
   .accoms {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1025px) {
+  .accoms {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

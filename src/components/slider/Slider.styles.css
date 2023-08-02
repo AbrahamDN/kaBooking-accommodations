@@ -48,6 +48,6 @@
 
 @media (min-width: 1025px) {
   .slide {
-    min-width: 33%;
+    min-width: 24rem;
   }
 }

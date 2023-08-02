@@ -29,19 +29,18 @@
 @media (min-width: 961px) {
   .page > .content__container {
     display: flex;
-    grid-template-columns: 3fr 2fr;
+    gap: 8rem;
   }
 
   .content {
-    width: 60%;
+    max-width: 60%;
   }
 
   .sidebar {
     position: sticky;
     top: 4rem;
     height: fit-content;
-    margin-left: 8rem;
-    width: 100%;
+    width: 40%;
     box-shadow: var(--box-shadow);
   }
 }
